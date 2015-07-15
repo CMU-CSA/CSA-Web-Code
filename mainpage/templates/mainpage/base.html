@@ -1,10 +1,25 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <title>CMU CSA</title>
 </head>
+<link rel="stylesheet" href="{% static 'mainpage/style.css' %}" />
 <body>
+
+{% block navbar %}
+
+    {% include "mainpage/navbar.html" %}
+
+{% endblock %}
+
+{% block content %}
+
+{% endblock %}
+
+{% include "mainpage/footer.html" %}
 
 </body>
 </html>
