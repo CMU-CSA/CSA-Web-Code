@@ -1,1 +1,1 @@
-web: gunicorn CMU_CSA/wsgi --log-file -
+web: gunicorn CMU_CSA.wsgi --log-file -
