@@ -15,8 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.http import HttpResponseRedirect
+
+def redirect_to_home(request):
+    return HttpResponseRedirect('/home/')
 
 urlpatterns = [
+    url(r'^$', redirect_to_home),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^home/', include('mainpage.urls', namespace="mainpage")),
 ]
+
