@@ -1,1 +1,1 @@
-web: gunicorn CMU_CSA.wsgi --log-file -
+web: python manage.py runserver --log-file -
