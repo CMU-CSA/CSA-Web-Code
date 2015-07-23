@@ -1,3 +1,9 @@
 .famous-container {
     height: 400px;
 }
+
+.logo-image {
+	background: url("CSA.png");
+	width: 300px;
+	height: 300px;
+}
