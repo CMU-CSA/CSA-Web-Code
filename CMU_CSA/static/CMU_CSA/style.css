@@ -1,0 +1,78 @@
+body {
+	/*debug use only*/
+	background-color: lightgreen;
+}
+.famous-container {
+    height: 400px;
+}
+
+.logo-image {
+	background: url("CSA.png");
+	width: 300px;
+	height: 300px;
+}
+
+.navbar-brand {
+	margin-left: 20px !important;
+	padding-top: 3px !important;
+}
+
+.navbar-default {
+	background-color: white;
+	border-color: white !important;
+
+}
+
+
+.navbar-default .navbar-collapse{
+
+	border-width: 0px !important;
+}
+
+.navbar-default .navbar-nav>li>a{
+	color:black;
+}
+
+li {
+	padding-left: 10px;
+	
+}
+
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+	body {
+	/*debug use only*/
+		background-color: lightblue;
+    }
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {
+	body {
+        background-color: lightcoral;
+    }
+
+	ul {
+    	text-align: right;
+    }
+
+    .logo-image {
+	width: 300px;
+	height: 300px;
+	}
+
+    
+
+	.navbar-brand {
+		padding-left: 10px;
+		margin-left: 0px !important;
+		padding-top: 3px !important;
+    }
+}
+
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width : 320px) {
+
+}
+
