@@ -2,7 +2,7 @@
 
 This repository is for website codes. For resource information please visit the other repository
 
-Test Url: `damp-ravine-8030.herokuapp.com`
+Test Url: `cmu-csa.herokuapp.com`
 
 #How to use virtual enviroment 
 
