@@ -1,4 +1,5 @@
 {% extends "mainpage/base.html" %}
+{% load staticfiles %}
 
 {% block navbar %}
 <nav class="navbar navbar-default">
@@ -12,7 +13,7 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="#">
-      	<img src="../static/mainpage/CSA.png" style="width:80px; heigth:80px">
+      	<img src="{% static 'mainpage/CSA.png' %}" style="width:80px; height:80px">
       </a>
     </div>
 
