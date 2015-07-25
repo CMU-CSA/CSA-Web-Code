@@ -37,6 +37,37 @@ li {
 	padding-left: 10px;
 	
 }
+.footer {
+	color:white;
+	background-color: #404148;
+	padding: 30px;
+}
+
+.footer a{
+	color: white;
+}
+.contact-info {
+	display: flex;
+	border-width: 0px;
+	border-bottom-color: white;
+	border-bottom-width: 1px;
+	border-style: solid;
+	padding-bottom: 30px;
+}
+
+.fixed{
+    width: 300px;
+    
+}
+
+
+.flex-item {
+    flex-grow: 1;
+    
+}
+.copy-right {
+	padding-top: 30px;
+}
 
 
 /* Small Devices, Tablets */
@@ -58,8 +89,8 @@ li {
     }
 
     .logo-image {
-	width: 300px;
-	height: 300px;
+		width: 300px;
+		height: 300px;
 	}
 
     
@@ -68,6 +99,9 @@ li {
 		padding-left: 10px;
 		margin-left: 0px !important;
 		padding-top: 3px !important;
+    }
+    .fixed{
+    	display: none;
     }
 }
 
