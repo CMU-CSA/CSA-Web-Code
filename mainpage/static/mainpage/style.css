@@ -38,6 +38,9 @@ li {
 	
 }
 .footer {
+	width:100%;
+	position:fixed;
+	bottom:0px;
 	color:white;
 	background-color: #404148;
 	padding: 30px;
@@ -100,7 +103,12 @@ li {
 		margin-left: 0px !important;
 		padding-top: 3px !important;
     }
+    .footer{
+    	padding-left: 10px;
+    	padding-right: 10px;
+    }
     .fixed{
+
     	display: none;
     }
 }
