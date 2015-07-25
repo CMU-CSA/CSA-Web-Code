@@ -18,6 +18,7 @@ body {
 }
 
 .navbar-default {
+	margin-bottom: 0px !important;
 	background-color: white;
 	border-color: white !important;
 
@@ -68,6 +69,48 @@ li {
 }
 .copy-right {
 	padding-top: 30px;
+}
+
+/* Contact */
+.jumbotron {
+	margin-bottom: 0px;
+}
+
+input {
+	font-size: 21px;
+	width: 653px;
+	padding:10px;
+	border-style: solid;
+	border-width: 0px;
+	border-bottom-width: 3px;
+	border-bottom-color: black;
+	margin-top: 20px;
+	background-color: transparent;
+
+}
+
+textarea  {
+	resize:none;
+	margin-top: 20px !important;
+	padding: 10px !important;
+	font-size: 21px !important;	
+	border-style: solid;
+	border-width: 0px;
+	border-bottom-width: 3px;
+}
+
+.button {
+	padding: 0px !important; 
+	text-align: left;
+	font-size: 21px;
+	width:100px;
+	background-color: transparent;
+	border-style: solid;
+	border-width: 0px;
+	border-bottom-width: 3px;
+	border-bottom-color: black;
+	width: inherit;
+	margin-top: 20px;
 }
 
 
