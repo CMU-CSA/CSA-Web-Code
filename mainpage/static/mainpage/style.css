@@ -1,6 +1,6 @@
 body {
 	/*debug use only*/
-	background-color: lightgreen;
+	background-color: rgb(245,244,243);
 }
 
 .famous-container {
@@ -14,13 +14,18 @@ body {
 }
 
 .navbar-brand {
-	margin-left: 20px !important;
-	padding-top: 3px !important;
+    margin-left: 20px !important;
+    padding-top: 3px !important;
+}
+
+.navbar-brand img {
+    width: 80px;
+    height: 80px;
+    background-color: rgb(245, 244, 243)
 }
 
 .navbar-default {
 	margin-bottom: 0px !important;
-	background-color: white;
 	border-color: white !important;
 
 }
