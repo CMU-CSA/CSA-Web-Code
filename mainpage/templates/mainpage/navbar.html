@@ -17,11 +17,11 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Home</a></li>
+        <li><a href="{% url 'mainpage:home' %}">Home</a></li>
         <li><a href="#">Activities</a></li>
         <li><a href="#">Resources</a></li>
-        <li><a href="#">About us</a></li>
-        <li><a href="#">Contact us</a></li>
+        <li><a href="{% url 'mainpage:aboutus' %}">About us</a></li>
+        <li><a href="{% url 'mainpage:contact' %}">Contact us</a></li>
        
         <li><a href="#">Log in</a></li>
       </ul>

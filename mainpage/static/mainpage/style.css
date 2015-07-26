@@ -2,6 +2,7 @@ body {
 	/*debug use only*/
 	background-color: lightgreen;
 }
+
 .famous-container {
     height: 400px;
 }
@@ -38,6 +39,7 @@ li {
 	padding-left: 10px;
 	
 }
+
 .footer {
 	
 	color:white;
@@ -48,6 +50,11 @@ li {
 .footer a{
 	color: white;
 }
+
+.footer p{
+    margin-bottom: 20px;
+}
+
 .contact-info {
 	display: flex;
 	border-width: 0px;
@@ -57,16 +64,6 @@ li {
 	padding-bottom: 30px;
 }
 
-.fixed{
-    width: 300px;
-    
-}
-
-
-.flex-item {
-    flex-grow: 1;
-    
-}
 .copy-right {
 	padding-top: 30px;
 }
