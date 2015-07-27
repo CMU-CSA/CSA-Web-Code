@@ -117,7 +117,7 @@ textarea  {
 
 .active{
 	border-bottom-style: solid !important;
-    border-bottom-color: red !important;
+    border-bottom-color: rgb(207,66,77) !important;
 }
 
 /* Small Devices, Tablets */

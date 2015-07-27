@@ -2,10 +2,13 @@ from django.shortcuts import render
 from django.core.mail import send_mail
 # Create your views here.
 def home(request):
-    return render(request,'mainpage/home.html')
+    context = {'name' : 'home'}
+    return render(request, 'mainpage/home.html', context)
 
 def contact(request):
-    return render(request,'mainpage/contact.html')
+    context = {'name' : 'contact'}
+    return render(request, 'mainpage/contact.html', context)
 
 def aboutus(request):
-    return render(request,'mainpage/aboutus.html')
+    context = {'name' : 'aboutus'}
+    return render(request,'mainpage/aboutus.html', context)
