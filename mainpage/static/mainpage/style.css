@@ -3,8 +3,9 @@ body {
 	background-color: rgb(245,244,243);
 }
 
+/* spinning logo */
 .famous-container {
-    height: 400px;
+    height: 350px;
 }
 
 .logo-image {
@@ -12,6 +13,9 @@ body {
 	width: 300px;
 	height: 300px;
 }
+
+
+/* navbar */
 
 .navbar-brand {
     margin-left: 20px !important;
@@ -45,6 +49,8 @@ li {
 	
 }
 
+/* footer */
+
 .footer {
 	
 	color:white;
@@ -72,6 +78,7 @@ li {
 .copy-right {
 	padding-top: 30px;
 }
+
 
 /* Contact */
 .jumbotron {
@@ -118,6 +125,42 @@ textarea  {
 	border-bottom-style: solid !important;
     border-bottom-color: rgb(207,66,77) !important;
 }
+
+/* about us */
+.members {
+    padding-top: 30px;
+    padding-left: 3%;
+    padding-bottom: 30px;
+    padding-right: 3%;
+}
+
+.member {
+    width: 95%;
+    height: auto;
+    background-color: white;
+    box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px auto;
+}
+
+.member img{
+    width: 100%;
+    margin-bottom: 15px;
+    background-color: black;
+}
+
+.member .info {
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+
+.member .info strong {
+    font-size: 17px;
+}
+
+.member .info span {
+    color: gray;
+}
+
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
