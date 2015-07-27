@@ -20,14 +20,11 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="{% url 'mainpage:home' %}"
-               class="{% if name == 'home' %} active {% endif %}">Home</a></li>
+        <li><a href="{% url 'mainpage:home' %}">Home</a></li>
         <li><a href="#">Activities</a></li>
         <li><a href="#">Resources</a></li>
-        <li><a href="{% url 'mainpage:aboutus' %}"
-               class="{% if name == 'aboutus' %} active {% endif %}">About us</a></li>
-        <li><a href="{% url 'mainpage:contact' %}"
-               class="{% if name == 'contact' %} active {% endif %}">Contact us</a></li>
+        <li><a href="{% url 'mainpage:aboutus' %}">About us</a></li>
+        <li><a href="{% url 'mainpage:contact' %}">Contact us</a></li>
         <li><a href="#">Log in</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
@@ -37,5 +34,10 @@
 {% endblock %}
 
 {% block content %}
-
+<script>
+ $( document ).ready(function() {
+  $("ul li:nth-child(1) > a").addClass('active');
+   /* $('li > a').first().addClass('active');*/
+ });
+</script>
 {% endblock %}
