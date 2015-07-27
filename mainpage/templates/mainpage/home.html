@@ -36,4 +36,10 @@
 
 {% block content %}
 
+<script>
+ $( document ).ready(function() {
+  $("ul li:nth-child(1) > a").addClass('active');
+   /* $('li > a').first().addClass('active');*/
+ });
+</script>
 {% endblock %}

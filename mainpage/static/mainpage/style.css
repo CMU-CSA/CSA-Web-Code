@@ -115,6 +115,10 @@ textarea  {
 	margin-top: 20px;
 }
 
+.active{
+	border-bottom-style: solid !important;
+    border-bottom-color: red !important;
+}
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
@@ -155,6 +159,7 @@ textarea  {
     	display: none;
     }
 }
+
 
 /* Custom, iPhone Retina */ 
 @media only screen and (max-width : 320px) {
