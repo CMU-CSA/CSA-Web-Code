@@ -41,7 +41,12 @@ body {
 }
 
 .navbar-default .navbar-nav>li>a{
-	color:black;
+	color: black;
+    line-height: 12px;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    font-size: 15px;
+    font-weight: 300;
 }
 
 li {
@@ -129,9 +134,9 @@ textarea  {
 /* about us */
 .members {
     padding-top: 30px;
-    padding-left: 3%;
+    padding-left: 5%;
     padding-bottom: 30px;
-    padding-right: 3%;
+    padding-right: 5%;
 }
 
 .member {
@@ -139,7 +144,7 @@ textarea  {
     height: auto;
     background-color: white;
     box-shadow: 1px 3px 1px rgba(0, 0, 0, 0.2);
-    margin: 10px auto;
+    margin: 15px auto;
 }
 
 .member img{
@@ -200,14 +205,19 @@ textarea  {
 
     	display: none;
     }
+
+    .members {
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
 
 
 /* Custom, iPhone Retina */ 
 @media only screen and (max-width : 320px) {
     .members {
-        padding-left: 1%;
-        padding-right: 1%;
+        padding-left: 0;
+        padding-right: 0;
     }
 
 
