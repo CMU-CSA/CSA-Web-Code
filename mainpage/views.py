@@ -8,4 +8,7 @@ def contact(request):
     return render(request, 'mainpage/contact.html')
 
 def aboutus(request):
-    return render(request,'mainpage/aboutus.html')
+    return render(request, 'mainpage/aboutus.html')
+
+def activities(request):
+    return render(request, 'mainpage/activities.html')

@@ -1,10 +1,30 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+{% extends "mainpage/base.html" %}
+{% load staticfiles %}
 
-</body>
-</html>
+{% block content %}
+
+    <div class="activities container-fluid">
+        <div class="activity row">
+            <div class="col-md-6 col-sm-6 col-xs-12 pic">
+                <img src="{% static 'mainpage/CSA.png' %}">
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12 words">
+                <p class="title"><strong>Chinese New Year Gala</strong></p>
+                <p class="description">Celebrate the Chinese New Year with the CSA family</p>
+                <p class="info">
+                    <strong>Time:</strong> 8pm - 10pm, February 10, 2015 <br>
+                    <strong>Location:</strong> University Center
+                </p>
+                <p class="link"><a href="#">Learn More</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+     $( document ).ready(function() {
+      $("ul li:nth-child(2) > a").addClass('active');
+       /* $('li > a').first().addClass('active');*/
+     });
+    </script>
+
+{% endblock %}

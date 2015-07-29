@@ -42,7 +42,7 @@ body {
 
 .navbar-default .navbar-nav>li>a{
 	color: black;
-    line-height: 12px;
+    line-height: 13px;
     padding-top: 20px;
     padding-bottom: 15px;
     font-size: 15px;
@@ -127,7 +127,7 @@ textarea  {
 }
 
 .active{
-	border-bottom-style: solid !important;
+	border-bottom: 2px solid !important;
     border-bottom-color: rgb(207,66,77) !important;
 }
 
@@ -166,7 +166,65 @@ textarea  {
     color: gray;
 }
 
+/* activities */
 
+.activities {
+	padding-top: 30px;
+	padding-left: 5%;
+	padding-bottom: 30px;
+	padding-right: 5%;
+}
+
+.activity {
+    background-color: white;
+    box-shadow: 1px 3px 1px rgba(0, 0, 0, 0.2);
+}
+
+.activity .pic {
+	overflow: hidden;
+    background-color: rgb(216,216,216);
+    box-shadow: 0;
+}
+
+.activity .pic img {
+	width: 100%;
+    margin: 0 auto;
+}
+
+.activity .words {
+	padding-top: 20px;
+    padding-left: 30px;
+}
+
+.activity .words p {
+    font-size: 17px;
+    font-weight: 300;
+    max-width: 88%;
+}
+
+.activity .words .title {
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+.activity .words .description {
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.activity .words .info {
+
+}
+
+.activity .words .link a {
+    color: black;
+    border-bottom: 2px solid;
+    padding-bottom: 5px;
+}
+
+a:hover {
+    text-decoration: none;
+}
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
 	body {
