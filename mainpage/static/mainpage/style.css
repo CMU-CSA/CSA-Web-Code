@@ -178,6 +178,8 @@ textarea  {
 .activity {
     background-color: white;
     box-shadow: 1px 3px 1px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 3% 1%;
 }
 
 .activity .pic {
@@ -197,23 +199,29 @@ textarea  {
 }
 
 .activity .words p {
-    font-size: 17px;
+    font-size: 15px;
     font-weight: 300;
     max-width: 88%;
+    max-height: 84px;
 }
 
 .activity .words .title {
-    font-size: 24px;
-    margin-bottom: 25px;
+    font-size: 20px;
+    margin-bottom: 3%;
 }
 
 .activity .words .description {
     font-weight: 300;
-    margin-bottom: 20px;
+    margin-bottom: 3%;
 }
 
 .activity .words .info {
+    line-height: 1.5;
+}
 
+.activity .words .link {
+    position: absolute;
+    bottom: 20px;
 }
 
 .activity .words .link a {
@@ -225,11 +233,20 @@ textarea  {
 a:hover {
     text-decoration: none;
 }
+
+a:active {
+    text-decoration: none;
+}
+
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
 	body {
 	/*debug use only*/
 		background-color: lightblue;
+    }
+
+    .activity .words p {
+        max-width: 95%;
     }
 }
 
@@ -257,6 +274,32 @@ a:hover {
     .members {
         padding-left: 0;
         padding-right: 0;
+    }
+
+    .activity .words p {
+        font-size: 14px;
+        max-height: 44px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .activity .words .title {
+        font-size: 17px;
+        margin-bottom: 15px;
+    }
+
+    .activity .words .description {
+        margin-bottom: 1%;
+    }
+
+    .activity .words {
+        padding-top: 10px;
+        padding-left: 20px;
+    }
+
+    .activity .words .link {
+        bottom: 5px;
+        right: 20px;
     }
 }
 
