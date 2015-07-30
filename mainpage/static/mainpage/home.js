@@ -17,10 +17,10 @@ function resizeActivityImage() {
 
         $(this).find(".pic").height(newHeight);
         if ($(window).width() < 768) {
-            $(this).find(".words").height(newHeight-30);
+            $(this).find(".words").height(newHeight-32);
             $(this).height(2*newHeight-20);
         } else {
-            $(this).find(".words").height(newHeight-20);
+            $(this).find(".words").height(newHeight-22);
             $(this).height(newHeight);
         }
     });
