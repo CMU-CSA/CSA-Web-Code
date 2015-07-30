@@ -16,7 +16,6 @@ body {
 
 
 /* navbar */
-
 .navbar-brand {
     margin-left: 20px !important;
     padding-top: 3px !important;
@@ -34,7 +33,6 @@ body {
 
 }
 
-
 .navbar-default .navbar-collapse{
 
 	border-width: 0 !important;
@@ -51,13 +49,11 @@ body {
 
 li {
 	padding-left: 10px;
-	
 }
 
-/* footer */
 
+/* footer */
 .footer {
-	
 	color:white;
 	background-color: #404148;
 	padding: 30px;
@@ -74,9 +70,7 @@ li {
 .contact-info {
 	display: flex;
 	border-width: 0;
-	border-bottom-color: white;
-	border-bottom-width: 1px;
-	border-style: solid;
+	border-bottom: 1px solid white;
 	padding-bottom: 30px;
 }
 
@@ -94,10 +88,8 @@ input {
 	font-size: 21px;
 	width: 653px;
 	padding:10px;
-	border-style: solid;
-	border-width: 0;
-	border-bottom-width: 3px;
-	border-bottom-color: black;
+	border: 0 solid;
+	border-bottom: 3px solid black;
 	margin-top: 20px;
 	background-color: transparent;
 
@@ -108,8 +100,7 @@ textarea  {
 	margin-top: 20px !important;
 	padding: 10px !important;
 	font-size: 21px !important;	
-	border-style: solid;
-	border-width: 0;
+	border: 0 solid;
 	border-bottom-width: 3px;
 }
 
@@ -118,25 +109,20 @@ textarea  {
 	text-align: left;
 	font-size: 21px;
 	background-color: transparent;
-	border-style: solid;
-	border-width: 0;
-	border-bottom-width: 3px;
-	border-bottom-color: black;
+	border: 0 solid;
+	border-bottom: 3px solid black;
 	width: inherit;
 	margin-top: 20px;
 }
 
 .active{
-	border-bottom: 2px solid !important;
-    border-bottom-color: rgb(207,66,77) !important;
+	border-bottom: 2px solid rgb(207,66,77) !important;
 }
+
 
 /* about us */
 .members {
-    padding-top: 30px;
-    padding-left: 5%;
-    padding-bottom: 30px;
-    padding-right: 5%;
+    padding: 30px 3%;
 }
 
 .member {
@@ -149,7 +135,7 @@ textarea  {
 
 .member img{
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     background-color: black;
 }
 
@@ -167,12 +153,8 @@ textarea  {
 }
 
 /* activities */
-
 .activities {
-	padding-top: 30px;
-	padding-left: 5%;
-	padding-bottom: 30px;
-	padding-right: 5%;
+	padding: 30px 5%;
 }
 
 .activity {
@@ -206,7 +188,7 @@ textarea  {
 }
 
 .activity .words .title {
-    font-size: 20px;
+    font-size: 22px;
     margin-bottom: 3%;
 }
 
@@ -230,13 +212,15 @@ textarea  {
     padding-bottom: 5px;
 }
 
+a:link {
+    text-decoration: none;
+}
+
 a:hover {
     text-decoration: none;
 }
 
-a:active {
-    text-decoration: none;
-}
+
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
@@ -306,11 +290,6 @@ a:active {
 
 /* Custom, iPhone Retina */ 
 @media only screen and (max-width : 320px) {
-    .members {
-        padding-left: 0;
-        padding-right: 0;
-    }
-
 
 }
 
