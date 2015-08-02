@@ -30,7 +30,6 @@ body {
 .navbar-default {
     margin-bottom: 0 !important;
     border-color: white !important;
-
 }
 
 .navbar-default .navbar-collapse{
@@ -91,7 +90,6 @@ input {
     border-bottom: 3px solid black;
     margin-top: 20px;
     background-color: transparent;
-
 }
 
 textarea  {
@@ -207,7 +205,7 @@ textarea  {
 
 .activity .words .link a {
     color: black;
-    border-bottom: 2px solid;
+    border-bottom: 1px solid;
     padding-bottom: 5px;
 }
 
@@ -228,9 +226,35 @@ a:hover {
         background-color: lightblue;
     }
 
+    .activity .words {
+        padding-top: 10px;
+        padding-left: 20px;
+    }
+
     .activity .words p {
         max-width: 95%;
+        max-height: 44px;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
+
+    .activity .words .title {
+        font-size: 17px;
+    }
+
+    .activity .words p {
+        font-size: 12px;
+        max-height: 51px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .activity .words .link {
+        bottom: 5px;
+        height: 22px;
+    }
+
+
 }
 
 /* Extra Small Devices, Phones */ 
@@ -259,15 +283,11 @@ a:hover {
         padding-right: 0;
     }
 
-    .activity .words p {
-        font-size: 14px;
-        max-height: 44px;
-        overflow: hidden;
-        text-overflow: ellipsis;
+    .activities {
+        padding: 30px 2%;
     }
 
     .activity .words .title {
-        font-size: 17px;
         margin-bottom: 15px;
     }
 
@@ -275,14 +295,9 @@ a:hover {
         margin-bottom: 1%;
     }
 
-    .activity .words {
-        padding-top: 10px;
-        padding-left: 20px;
-    }
-
     .activity .words .link {
-        bottom: 5px;
         right: 20px;
+        height: 24px;
     }
 }
 

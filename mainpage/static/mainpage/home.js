@@ -19,6 +19,9 @@ function resizeActivityImage() {
         if ($(window).width() < 768) {
             $(this).find(".words").height(newHeight-32);
             $(this).height(2*newHeight-20);
+        } else if ($(window).width() == 768){
+            $(this).find(".words").height(newHeight-12);
+            $(this).height(newHeight);
         } else {
             $(this).find(".words").height(newHeight-22);
             $(this).height(newHeight);
