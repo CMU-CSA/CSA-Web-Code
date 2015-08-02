@@ -178,7 +178,7 @@ textarea  {
 }
 
 .activity .words p {
-    font-size: 15px;
+    font-size: 1.05em;
     font-weight: 300;
     max-width: 90%;
     max-height: 84px;
@@ -231,30 +231,21 @@ a:hover {
         padding-left: 20px;
     }
 
-    .activity .words p {
-        max-width: 95%;
-        max-height: 44px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
     .activity .words .title {
         font-size: 17px;
     }
 
     .activity .words p {
-        font-size: 12px;
-        max-height: 51px;
+        font-size: 13px;
+        max-height: 53px;
         overflow: hidden;
         text-overflow: ellipsis;
     }
 
     .activity .words .link {
         bottom: 5px;
-        height: 22px;
+        height: 23px;
     }
-
-
 }
 
 /* Extra Small Devices, Phones */ 
@@ -285,6 +276,12 @@ a:hover {
 
     .activities {
         padding: 30px 2%;
+    }
+
+    .activity .words p {
+        font-size: 14px;
+        max-height: 44px;
+        max-width: 95%;
     }
 
     .activity .words .title {
