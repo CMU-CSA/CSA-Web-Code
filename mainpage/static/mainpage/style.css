@@ -66,7 +66,6 @@ li {
 }
 
 .contact-info {
-    display: flex;
     border-width: 0;
     border-bottom: 1px solid white;
     padding-bottom: 30px;
@@ -78,14 +77,18 @@ li {
 
 
 /* Contact */
-.jumbotron {
-    margin-bottom: 0;
+
+.contact{
+    font-size: 16px !important;
+    padding:50px; 
+    padding-top:80px;
+    padding-bottom: 30px;
 }
 
 input {
-    font-size: 21px;
-    width: 653px;
-    padding: 10px;
+  
+    width: 590px;
+    padding: 0px;
     border: 0 solid;
     border-bottom: 3px solid black;
     margin-top: 20px;
@@ -96,7 +99,7 @@ textarea  {
     resize: none;
     margin-top: 20px !important;
     padding: 10px !important;
-    font-size: 21px !important;
+
     border: 0 solid;
     border-bottom-width: 3px;
 }
@@ -104,7 +107,6 @@ textarea  {
 .button {
     padding: 0 !important;
     text-align: left;
-    font-size: 21px;
     background-color: transparent;
     border: 0 solid;
     border-bottom: 3px solid black;
@@ -295,6 +297,19 @@ a:hover {
     .activity .words .link {
         right: 20px;
         height: 24px;
+    }
+    /* Contact*/
+    .contact{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .contact .email input{
+        width: 100%;
+
+    }
+    .contact textarea{
+        width: 100% !important;
     }
 }
 
