@@ -2,7 +2,7 @@
 
 This repository is for website codes. For resource information please visit the other repository
 
-Test Url: `cmu-csa.herokuapp.com`
+Test Url: `www.cmucsa.com`
 
 #How to use virtual enviroment 
 
