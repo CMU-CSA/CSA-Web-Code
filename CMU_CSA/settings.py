@@ -15,7 +15,7 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
+PROJECT_ROOT = os.path.realpath(os.path.dirname(__file__)) + '/'
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
@@ -27,7 +27,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+LOGIN_URL = '/VotingPlatform/index'
 
+LOGIN_REDIRECT_URL = '/VotingPlatform/index'
 # Application definition
 
 INSTALLED_APPS = (
@@ -38,6 +40,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'mainpage',
+    'VotingPlatform'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -102,6 +105,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = 'staticfiles'
+
+# Media files
+MEDIA_ROOT = PROJECT_ROOT + 'media/'
+
+MEDIA_URL = '/media/'
 
 #  Email Configuration (Contact)
 

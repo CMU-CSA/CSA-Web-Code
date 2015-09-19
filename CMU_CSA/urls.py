@@ -24,5 +24,6 @@ urlpatterns = [
     url(r'^$', redirect_to_home),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^home/', include('mainpage.urls', namespace="mainpage")),
+    url(r'^voice/', include('VotingPlatform.urls'))
 ]
 
