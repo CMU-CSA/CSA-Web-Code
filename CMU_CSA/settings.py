@@ -87,7 +87,7 @@ def database():
             }
         }
     else:
-        return dj_database_url.config()
+        return {'default': dj_database_url.config()}
 
 DATABASES =  database()
 
