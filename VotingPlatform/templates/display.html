@@ -33,7 +33,7 @@
 
     $(document).ready(function() {
         setInterval(function() {
-            $.get("http://www.cmucsa.com/voice/displayData", function (data) {
+            $.get("/voice/displayData", function (data) {
                 list = {
                     labels: data['labels'],
                     series: [data['series']]
