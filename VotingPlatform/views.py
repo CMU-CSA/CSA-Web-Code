@@ -301,6 +301,7 @@ def vote(request):
             third.votes_first_round = third.votes_first_round + 1
             first.save()
             second.save()
+            third.save()
         except ObjectDoesNotExist:
             return error(request, "Candidate does not exist")
 
@@ -330,11 +331,17 @@ def vote(request):
             third = Candidate.objects.get(name = request.POST['third_choice'])
             if first.id == second.id:
                 return error(request, "Cannot select the same candidate more than once")
-            first.votes_second_round = first.votes_second_round + 1
-            second.votes_second_round = second.votes_second_round + 1
-            third.votes_second_round = third.votes_second_round + 1
+            if number.is_judge:
+                first.votes_judge = first.votes_judge + 1
+                second.votes_judge = second.votes_judge + 1
+                third.votes_judge = third.votes_judge + 1
+            else:
+                first.votes_second_round = first.votes_second_round + 1
+                second.votes_second_round = second.votes_second_round + 1
+                third.votes_second_round = third.votes_second_round + 1
             first.save()
             second.save()
+            third.save()
         except ObjectDoesNotExist:
             return error(request, "Candidate does not exist")
 
@@ -353,7 +360,7 @@ def display(request):
 def coefficient():
     n = len(AndrewIDs.objects.filter(first_voted = True))
     x = float(n)*3.0*1.5/12
-    return 100
+    return x
 
 def displayData(request):
     r = current_round()
