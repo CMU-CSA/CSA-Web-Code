@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse, Http404, JsonResponse
 from mimetypes import guess_type
-from VotingPlatform.models import Candidate, Round, Session, TicketNumber
+from VotingPlatform.models import Candidate, Round, Session, TicketNumber, AndrewIDs
 from VotingPlatform.forms import CandidateForm, CandidateEditForm
 from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate, logout
@@ -227,7 +227,7 @@ def disable_voting(request):
 @transaction.atomic
 def clear_records(request):
     Session.objects.all().delete()
-    for ticket in TicketNumber.objects.all():
+    for ticket in AndrewIDs.objects.all():
         ticket.first_voted = False
         ticket.second_voted = False
         ticket.save()
@@ -248,7 +248,7 @@ def vote(request):
         return error(request, 'Argument "ticket" is missing in request')
     try:
         r = int(request.POST['round'])
-        ticket = int(request.POST['ticket'])
+        ticket = str(request.POST['ticket'])
     except:
         return error(request, 'Error parsing argument "round" or "ticket"')
     cr = current_round()
@@ -265,11 +265,11 @@ def vote(request):
         except ObjectDoesNotExist:
             session = Session(sessionid = sessionid)
         try:
-            number = TicketNumber.objects.get(number = ticket)
+            number = AndrewIDs.objects.get(andrewId = ticket)
             if number.first_voted:
                 return error(request, 'You have voted.', redirect_url = 'a_random_page_that_probably_does_not_exist')
         except ObjectDoesNotExist:
-            return error(request, 'Sorry, you ticket number ' + str(ticket) + ' is not in the system')
+            return error(request, 'Sorry, you andrew id ' + str(ticket) + ' is not in the system')
         # pairs = CandidatePair.objects.all()
         # votes = []
         """
@@ -293,10 +293,12 @@ def vote(request):
         try:
             first = Candidate.objects.get(name = request.POST['first_choice'])
             second = Candidate.objects.get(name = request.POST['second_choice'])
+            third = Candidate.objects.get(name = request.POST['third_choice'])
             if first.id == second.id:
                 return error(request, "Cannot select the same candidate more than once")
-            first.votes_first_round = first.votes_second_round + 1
-            second.votes_first_round = second.votes_second_round + 1
+            first.votes_first_round = first.votes_first_round + 1
+            second.votes_first_round = second.votes_first_round + 1
+            third.votes_first_round = third.votes_first_round + 1
             first.save()
             second.save()
         except ObjectDoesNotExist:
@@ -314,21 +316,23 @@ def vote(request):
         except ObjectDoesNotExist:
             session = Session(sessionid = sessionid)
         try:
-            number = TicketNumber.objects.get(number = ticket)
+            number = AndrewIDs.objects.get(andrewId = ticket)
             if number.second_voted:
                 return error(request, 'You have voted.', redirect_url = 'a_random_page_that_probably_does_not_exist')
         except ObjectDoesNotExist:
-            return error(request, 'Sorry, you ticket number ' + str(ticket) + ' is not in the system')
+            return error(request, 'Sorry, you andrew id ' + str(ticket) + ' is not in the system')
         if not 'first_choice' in request.POST or not request.POST['first_choice'] \
             or not 'second_choice' in request.POST or not request.POST['second_choice']:
             return error(request, "first/second/third choice is missing in request")
         try:
             first = Candidate.objects.get(name = request.POST['first_choice'])
             second = Candidate.objects.get(name = request.POST['second_choice'])
+            third = Candidate.objects.get(name = request.POST['third_choice'])
             if first.id == second.id:
                 return error(request, "Cannot select the same candidate more than once")
             first.votes_second_round = first.votes_second_round + 1
             second.votes_second_round = second.votes_second_round + 1
+            third.votes_second_round = third.votes_second_round + 1
             first.save()
             second.save()
         except ObjectDoesNotExist:
@@ -346,8 +350,16 @@ def troll(request):
 def display(request):
     return render(request, 'display.html')
 
+def coefficient():
+    n = len(AndrewIDs.objects.filter(first_voted = True))
+    x = float(n)*3.0*1.5/12
+    return 100
+
 def displayData(request):
     r = current_round()
+    labels = []
+    judge_votes = []
+    audience_votes = []
     data = {
         'labels':[],
         'series':[]
@@ -360,7 +372,12 @@ def displayData(request):
     elif r.round == 2:
         candidates = Candidate.objects.filter(round = 2)
         for candidate in candidates:
-            data['labels'].append(candidate.name)
-            data['series'].append(candidate.votes_second_round)
+            labels.append(candidate.name)
+            c = coefficient()
+            x = float(candidate.votes_judge)*c
+            judge_votes.append(int(x))
+            audience_votes.append(candidate.votes_second_round)
+        data['series'] = [judge_votes,audience_votes]
+        data['labels'] = labels
     return JsonResponse(data)
 

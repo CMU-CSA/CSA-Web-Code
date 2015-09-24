@@ -34,7 +34,8 @@
         <input type="button" value="remove" onclick="confirmRemove('{{candidate.name}}')"/>
       </p>
       <p>Votes (first round): {{candidate.votes_first_round}}</p>
-      <p>Votes (second round): {{candidate.votes_second_round}}</p>
+      <p>Votes (second round judge): {{ candidate.votes_judge }}</p>
+      <p>Votes (second round audience): {{candidate.votes_second_round}}</p>
       {% if candidate.picture.name %}
       <img src="{% url 'photo' candidate.id %}" alt="(image not available)">
       {% endif %}

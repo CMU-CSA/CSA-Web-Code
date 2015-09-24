@@ -33,7 +33,7 @@
     <div class="row">
       <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 text-center">
         <h2 class="title"><strong>First Round Vote</strong></h2>
-        <h3 class="title"><italic>Please tell us your list of favorite singers @ CMU IDOL.</italic></h3>
+        <h3 class="title"><italic>Please tell us your list of favorite singers @ CMU BEST VOICE.</italic></h3>
       </div>
     </div>
 
@@ -77,10 +77,24 @@
         </div>
 
         <div class="row">
+          <div class="col-xs-6 text-center">
+            <h4>Third Choice: </h4>
+          </div>
+          <div class="col-xs-4 col-xs-offset-1 text-center">
+            <select class="form-control" id="third_select" onchange="set_third()">
+              <option></option>
+              {% for candidate in candidates %}
+              <option>{{candidate.name}}</option>
+              {% endfor %}
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
         <input type="hidden" id="first" name="first_choice" required="true" />
         <input type="hidden" id="second" name="second_choice"  required="true" />
-        <!--<input type="hidden" id="third" name="third_choice"  required="true" />-->
-        <input type="text" name="ticket" class="form-control" id="andrewid" placeholder="Your Ticket Number" required="true">
+        <input type="hidden" id="third" name="third_choice"  required="true" />
+        <input type="text" name="ticket" class="form-control" id="andrewid" placeholder="Your Andrew ID" required="true">
         <input class="btn btn-default" type="submit" value="Submit my vote" />
         {% csrf_token %}
         </div>

@@ -4,6 +4,7 @@ class Candidate(models.Model):
     name = models.CharField(max_length = 64)
     votes_first_round = models.IntegerField(default = 0)
     votes_second_round = models.IntegerField(default = 0)
+    votes_judge = models.IntegerField(default = 0)
     information = models.CharField(max_length = 8192)
     picture = models.ImageField(upload_to = 'pictures', blank=True)
     round = models.IntegerField(default = 1)
@@ -40,3 +41,9 @@ class TicketNumber(models.Model):
     number = models.IntegerField()
     first_voted = models.BooleanField(default = False)
     second_voted = models.BooleanField(default = False)
+
+class AndrewIDs(models.Model):
+    andrewId = models.CharField(max_length = 20)
+    first_voted = models.BooleanField(default = False)
+    second_voted = models.BooleanField(default = False)
+    is_judge = models.BooleanField(default = False)
