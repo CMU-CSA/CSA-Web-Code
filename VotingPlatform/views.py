@@ -359,7 +359,7 @@ def display(request):
 
 def coefficient():
     n = len(AndrewIDs.objects.filter(first_voted = True))
-    x = float(n)*3.0*1.5/12
+    x = float(n)*3.0*1.5/12.0
     return x
 
 def displayData(request):
@@ -374,8 +374,10 @@ def displayData(request):
     if r.round == 1:
         candidates = Candidate.objects.filter(round = 1)
         for candidate in candidates:
-            data['labels'].append(candidate.name)
-            data['series'].append(candidate.votes_first_round)
+            labels.append(candidate.name)
+            audience_votes.append(candidate.votes_first_round)
+            data['series'] = [[0,0,0,0,0,0],audience_votes]
+            data['labels'] = labels
     elif r.round == 2:
         candidates = Candidate.objects.filter(round = 2)
         for candidate in candidates:
