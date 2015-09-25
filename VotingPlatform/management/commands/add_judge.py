@@ -12,6 +12,9 @@ class Command(NoArgsCommand):
         for judge_id in options['judge_id']:
             try:
                 AndrewIDs.objects.get(andrewId = judge_id)
+                self.stdout.write('-- Judge ID: ' + judge_id + 'already exists')
             except ObjectDoesNotExist:
                 judge = AndrewIDs(andrewId = judge_id, is_judge = True)
+                self.stdout.write('-- Judge ID: ' + judge_id + 'added')
                 judge.save()
+        self.stdout.write('Judge ID scan complete')

@@ -20,8 +20,11 @@ from django.http import HttpResponseRedirect
 def redirect_to_home(request):
     return HttpResponseRedirect('/home/')
 
+def redirect_to_voice(request):
+    return HttpResponseRedirect('/voice/')
+
 urlpatterns = [
-    url(r'^$', redirect_to_home),
+    url(r'^$', redirect_to_voice),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^home/', include('mainpage.urls', namespace="mainpage")),
     url(r'^voice/', include('VotingPlatform.urls'))
