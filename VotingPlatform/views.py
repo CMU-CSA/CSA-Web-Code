@@ -11,9 +11,6 @@ from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
 
 # global variables:
-candidates1 = []
-candidates2 = []
-coeff = 0
 
 
 def current_round():
@@ -25,7 +22,7 @@ def error(request, reason, redirect_url = None, redirect = True):
     return render(request, "error.html", {'reason':reason, 'url':reverse('home') if not redirect_url else redirect_url, 'redirect': redirect})
 
 def home(request):
-    global round
+    round = current_round()
     if request.user.is_authenticated():
         return redirect(reverse('manage'))
     else:
@@ -53,8 +50,7 @@ def user_logout(request):
     return redirect(reverse('home'))
 
 def round1(request):
-    global candidates1
-    global round
+    round = current_round()
     if not round.open:
         return error(request, "Sorry. Voting will start soon!", redirect_url = reverse('round1'), redirect = False)
     if round.round != 1:
@@ -64,8 +60,7 @@ def round1(request):
     return render(request, 'round1.html', {'candidates':candidates1})
 
 def round2(request):
-    global candidates2
-    global round
+    round = current_round()
     if not round.open:
         return error(request, "Sorry. Voting will start soon!", redirect_url = reverse('round2'), redirect = False)
     if round.round != 2:
@@ -75,7 +70,7 @@ def round2(request):
 
 @login_required
 def admin_page(request):
-    global round
+    round = current_round()
     candidates = Candidate.objects.all()
     # pairs = CandidatePair.objects.all()
     # context = {'form':CandidateForm(), 'candidates':candidates, 'pairs':pairs, 'round':r}
@@ -85,9 +80,6 @@ def admin_page(request):
 @login_required
 @transaction.atomic
 def add_candidate(request):
-    global candidates1
-    global candidates2
-
     if not 'name' in request.POST or not request.POST['name'] \
         or not 'information' in request.POST or not request.POST['information']:
         return error(request, 'Missing argument "name" or "information"')
@@ -103,16 +95,11 @@ def add_candidate(request):
         if not form.is_valid():
             return error(request, 'Form invalid')
         form.save()
-        candidates1 = Candidate.objects.filter(round = 1)
-        candidates2 = Candidate.objects.filter(round = 2)
         return redirect(reverse('manage'))
     
 @login_required
 @transaction.atomic
 def remove_candidate(request):
-    global candidates1
-    global candidates2
-
     if not 'name' in request.POST or not request.POST['name']:
         return error(request, 'Missing argument "name" in request')
     name = request.POST['name']
@@ -120,8 +107,6 @@ def remove_candidate(request):
         candidate = Candidate.objects.get(name = name)
         candidate.picture.delete()
         candidate.delete()
-        candidates1 = Candidate.objects.filter(round = 1)
-        candidates2 = Candidate.objects.filter(round = 2)
         return redirect(reverse('manage'))
     except ObjectDoesNotExist:
         return error(request, 'Candidate ' + name + ' does not exist')
@@ -151,9 +136,6 @@ def remove_picture(request):
 @login_required
 @transaction.atomic
 def edit_candidate(request):
-    global candidates1
-    global candidates2
-
     if not 'id' in request.POST or not request.POST['id']:
         return error(request, 'Missing argument "id" in request')
     cid = request.POST['id']
@@ -172,8 +154,6 @@ def edit_candidate(request):
     except ObjectDoesNotExist:
         pass
     form.save()
-    candidates1 = Candidate.objects.filter(round = 1)
-    candidates2 = Candidate.objects.filter(round = 2)
     return redirect(reverse('manage'))
 """
 @login_required
@@ -211,7 +191,7 @@ def unpair_candidates(request):
 @login_required
 @transaction.atomic
 def next_round(request):
-    global round
+    round = current_round()
     if round.round == 1:
         """
         for pair in CandidatePair.objects.all():
@@ -225,7 +205,7 @@ def next_round(request):
 @login_required
 @transaction.atomic
 def prev_round(request):
-    global round
+    round = current_round()
 
     if round.round > 1:
         candidates = Candidate.objects.filter(round = round.round)
@@ -239,14 +219,14 @@ def prev_round(request):
 @login_required
 @transaction.atomic
 def enable_voting(request):
-    global round
+    round = current_round()
     round.toggle_voting(True)
     return redirect(reverse('manage'))
 
 @login_required
 @transaction.atomic
 def disable_voting(request):
-    global round
+    round = current_round()
     round.toggle_voting(False)
     return redirect(reverse('manage'))
 
@@ -270,9 +250,8 @@ def get_photo(request, cid):
 
 @transaction.atomic
 def vote(request):
-    global candidates1
-    global candidates2
-    global round
+
+    round = current_round()
 
     if not 'round' in request.POST or not request.POST['round']:
         return error(request, 'Argument "round" is missing in request')
@@ -292,8 +271,7 @@ def vote(request):
 
 
     if r == 1:
-        if candidates1 == []:
-            candidates1 = Candidate.objects.filter(round = 2)
+        candidates1 = Candidate.objects.filter(round = 1)
         try:
             session = Session.objects.get(sessionid = sessionid)
             if session.first_voted:
@@ -347,8 +325,7 @@ def vote(request):
         number.first_voted = True
         number.save()
     elif r == 2:
-        if candidates2 == []:
-            candidates2 = Candidate.objects.filter(round = 2)
+        candidates2 = Candidate.objects.filter(round = 2)
         try:
             session = Session.objects.get(sessionid = sessionid)
             if session.second_voted:
@@ -403,16 +380,8 @@ def coefficient():
     return x
 
 def displayData(request):
-    global candidates1
-    global candidates2
-    global coeff
-    global round
 
-    if candidates1 == []:
-        candidates1 = Candidate.objects.filter(round = 1)
-    if candidates2 == []:
-        candidates2 = Candidate.objects.filter(round = 2)
-    r = round
+    r = current_round()
     labels = []
     judge_votes = []
     audience_votes = []
@@ -421,18 +390,18 @@ def displayData(request):
         'series':[]
     }
     if r.round == 1:
+        candidates1 = Candidate.objects.filter(round = 1)
         for candidate in candidates1:
             labels.append(candidate.name)
             audience_votes.append(candidate.votes_first_round)
             data['series'] = [[0,0,0,0,0,0],audience_votes]
             data['labels'] = labels
     elif r.round == 2:
-        if coeff == 0:
-            coeff = coefficient()
+        coeff = coefficient()
+        candidates2 = Candidate.objects.filter(round = 2)
         for candidate in candidates2:
             labels.append(candidate.name)
-            c = coeff
-            x = float(candidate.votes_judge)*c
+            x = float(candidate.votes_judge)*coeff
             judge_votes.append(int(x))
             audience_votes.append(candidate.votes_second_round)
         data['series'] = [judge_votes,audience_votes]
