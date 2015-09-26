@@ -28,5 +28,6 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
     url(r'^display$','VotingPlatform.views.display', name='display'),
     url(r'^displayData','VotingPlatform.views.displayData', name='displayData'),
+    url(r'^add_andrewids','VotingPlatform.views.add_andrewids', name='add_andrewids'),
     url(r'^admin/', include(admin.site.urls)),
 )

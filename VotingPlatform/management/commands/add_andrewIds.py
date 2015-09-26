@@ -10,10 +10,10 @@ class Command(NoArgsCommand):
         andrew_ids = txt_file.read().split(",")
         for andrew_id in andrew_ids:
             try:
-                AndrewIDs.objects.get(andrewId = andrew_id)
-                self.stdout.write('-- andrew ID: ' + andrew_id + 'already exists')
+                AndrewIDs.objects.get(andrewId = str(andrew_id))
+                self.stdout.write('-- andrew ID: ' + str(andrew_id) + ' already exists')
             except ObjectDoesNotExist:
-                aid = AndrewIDs(andrewId = andrew_id)
-                self.stdout.write('-- Audience andrew ID: ' + andrew_id + 'added')
+                aid = AndrewIDs(andrewId = str(andrew_id))
+                self.stdout.write('-- Audience andrew ID: ' + str(andrew_id) + ' added')
                 aid.save()
         self.stdout.write('-- andrew IDs scan complete')

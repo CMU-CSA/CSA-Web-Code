@@ -25,6 +25,7 @@
     <span style="color:red">Dangerous: Do not click this unless you know what you are doing </span>
     <a href="{% url 'clear_records' %}">Clear Voting Session Records</a>
   </p>
+  <p><a href="{% url 'display' %}">Display Result</a></p>
   <h1>List of Candidates</h1>
   <div>
     {% for candidate in candidates %}
@@ -54,6 +55,12 @@
       <input type="submit" value="create" />
       {% csrf_token %}
     </form>
+      <form enctype="multipart/form-data" action="{% url 'add_andrewids' %}" method="post">
+          <label>Andrew ID File:</label>
+          <input type="file" name="andrewids">
+          <input type="submit" value="submit">
+          {% csrf_token %}
+      </form>
   </div>
   <p><a href="{% url 'logout' %}">Logout</a></p>
 </body>
