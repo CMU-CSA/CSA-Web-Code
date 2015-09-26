@@ -60,8 +60,7 @@ def round1(request):
     if round.round != 1:
         return redirect(reverse('round' + str(round.round)))
     # pairs = CandidatePair.objects.all()
-    if candidates1 == []:
-        candidates1 = Candidate.objects.filter(round = 1)
+    candidates1 = Candidate.objects.filter(round = 1)
     return render(request, 'round1.html', {'candidates':candidates1})
 
 def round2(request):
@@ -71,8 +70,7 @@ def round2(request):
         return error(request, "Sorry. Voting will start soon!", redirect_url = reverse('round2'), redirect = False)
     if round.round != 2:
         return redirect(reverse('round' + str(round.round)))
-    if candidates2 == []:
-        candidates2 = Candidate.objects.filter(round = 2)
+    candidates2 = Candidate.objects.filter(round = 2)
     return render(request, 'round2.html', {'candidates':candidates2})
 
 @login_required
