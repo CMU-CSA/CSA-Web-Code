@@ -395,7 +395,7 @@ def displayData(request):
         for candidate in candidates_1:
             labels.append(candidate.name)
             audience_votes.append(candidate.votes_first_round)
-            data['series'] = [[0,0,0,0,0,0],audience_votes]
+            data['series'] = [[0,0,0,0,0,0,0,0],audience_votes]
             data['labels'] = labels
     elif r.round == 2:
         coeff = coefficient()
