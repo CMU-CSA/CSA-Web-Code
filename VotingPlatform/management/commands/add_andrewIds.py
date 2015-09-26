@@ -7,8 +7,9 @@ class Command(NoArgsCommand):
 
     def handle_noargs(self, **options):
         txt_file = open("VotingPlatform/andrewids.txt","r")
-        andrew_ids = txt_file.read().split(",")
-        for andrew_id in andrew_ids:
+        andrew_ids = txt_file.readlines()
+        for andrewid in andrew_ids:
+            andrew_id = andrewid[0:-1]
             try:
                 AndrewIDs.objects.get(andrewId = str(andrew_id))
                 self.stdout.write('-- andrew ID: ' + str(andrew_id) + ' already exists')

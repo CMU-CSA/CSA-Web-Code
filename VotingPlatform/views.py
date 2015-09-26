@@ -391,7 +391,8 @@ def displayData(request):
     }
     if r.round == 1:
         candidates1 = Candidate.objects.filter(round = 1)
-        for candidate in candidates1:
+        candidates_1 = candidates1.order_by('id')
+        for candidate in candidates_1:
             labels.append(candidate.name)
             audience_votes.append(candidate.votes_first_round)
             data['series'] = [[0,0,0,0,0,0],audience_votes]
@@ -399,7 +400,8 @@ def displayData(request):
     elif r.round == 2:
         coeff = coefficient()
         candidates2 = Candidate.objects.filter(round = 2)
-        for candidate in candidates2:
+        candidates_2 = candidates2.order_by('id')
+        for candidate in candidates_2:
             labels.append(candidate.name)
             x = float(candidate.votes_judge)*coeff
             judge_votes.append(int(x))
@@ -411,9 +413,10 @@ def displayData(request):
 @transaction.atomic
 def add_andrewids(request):
     txt_file = request.FILES['andrewids']
-    andrew_ids = txt_file.read().split(",")
+    andrew_ids = txt_file.readlines()
     mes = []
-    for andrew_id in andrew_ids:
+    for andrewid in andrew_ids:
+        andrew_id = andrewid[0:-1]
         try:
             AndrewIDs.objects.get(andrewId = andrew_id)
             mes.append('-- Audience andrew ID: '+ str(andrew_id) + 'already exists')
