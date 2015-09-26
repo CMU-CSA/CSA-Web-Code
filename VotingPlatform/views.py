@@ -376,7 +376,7 @@ def display(request):
 
 def coefficient():
     n = len(AndrewIDs.objects.filter(first_voted = True))
-    x = float(n)*3.0*1.5/12.0
+    x = float(300)*3.0*1.5/12.0
     return x
 
 def displayData(request):
