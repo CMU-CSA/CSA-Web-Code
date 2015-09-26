@@ -91,7 +91,7 @@
             showGrid: false
         },
         axisY: {
-
+            onlyInteger: true,
             showGrid: false,
             showLabel: true,
             labelInterpolationFnc: function(value) {
@@ -106,10 +106,10 @@
         setInterval(function() {
             $.get("/voice/displayData", function (data) {
                 if (data['labels'].length == 8) {
-                    options.high = 200
+                    options.high = 300
                 }
                 else if (data['labels'].length == 6) {
-                    options.high = 400
+                    options.high = 500
                 }
                 list = {
                     labels: data['labels'],
@@ -117,7 +117,7 @@
                 };
                 chart.update(list, options, true);
             });
-        },1000)
+        },1500)
     });
 
 </script>

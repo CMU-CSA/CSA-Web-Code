@@ -16,8 +16,6 @@ from django.core.urlresolvers import reverse
 def current_round():
     return Round.objects.get(id = 1)
 
-round = current_round()
-
 def error(request, reason, redirect_url = None, redirect = True):
     return render(request, "error.html", {'reason':reason, 'url':reverse('home') if not redirect_url else redirect_url, 'redirect': redirect})
 
@@ -376,7 +374,7 @@ def display(request):
 
 def coefficient():
     n = len(AndrewIDs.objects.filter(first_voted = True))
-    x = float(300)*3.0*1.5 / 12.0 /2
+    x = float(n)*3.0*1.5 / 12.0 /2
     return x
 
 def displayData(request):
@@ -419,9 +417,9 @@ def add_andrewids(request):
         andrew_id = andrewid[0:-1]
         try:
             AndrewIDs.objects.get(andrewId = andrew_id)
-            mes.append('-- Audience andrew ID: '+ str(andrew_id) + 'already exists')
+            mes.append('-- Audience andrew ID: '+ str(andrew_id) + ' already exists')
         except ObjectDoesNotExist:
             aid = AndrewIDs(andrewId = andrew_id)
-            mes.append('-- Audience andrew ID: ' + str(andrew_id) + 'added')
             aid.save()
+            mes.append('-- Audience andrew ID: ' + str(andrew_id) + ' added')
     return render(request,'mes.html',{'messages': mes})

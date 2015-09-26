@@ -15,6 +15,6 @@ class Command(NoArgsCommand):
                 self.stdout.write('-- andrew ID: ' + str(andrew_id) + ' already exists')
             except ObjectDoesNotExist:
                 aid = AndrewIDs(andrewId = str(andrew_id))
-                self.stdout.write('-- Audience andrew ID: ' + str(andrew_id) + ' added')
                 aid.save()
+                self.stdout.write('-- Audience andrew ID: ' + str(andrew_id) + ' added')
         self.stdout.write('-- andrew IDs scan complete')

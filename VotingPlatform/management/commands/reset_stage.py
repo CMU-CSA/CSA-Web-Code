@@ -1,20 +1,22 @@
 from django.core.management.base import NoArgsCommand
 from django.contrib.auth.models import User
-from VotingPlatform.models import AndrewIDs
+from VotingPlatform.models import AndrewIDs, Candidate, Session
 from django.core.exceptions import ObjectDoesNotExist
 
 class Command(NoArgsCommand):
 
-    def add_arguments(self, parser):
-        parser.add_argument('judge_id', nargs='+', type = str)
-
-    def handle(self, *args, **options):
-        for judge_id in options['judge_id']:
-            try:
-                AndrewIDs.objects.get(andrewId = judge_id)
-                self.stdout.write('-- Judge ID: ' + judge_id + ' already exists')
-            except ObjectDoesNotExist:
-                judge = AndrewIDs(andrewId = judge_id, is_judge = True)
-                self.stdout.write('-- Judge ID: ' + judge_id + ' added')
-                judge.save()
-        self.stdout.write('Judge ID scan complete')
+     def handle_noargs(self, **options):
+        Session.objects.all().delete()
+        self.stdout.write('-- All sessions deleted')
+        for ticket in AndrewIDs.objects.all():
+            ticket.first_voted = False
+            ticket.second_voted = False
+            ticket.save()
+        self.stdout.write('-- All andrew ID reset')
+        candidates = Candidate.objects.all()
+        for candidate in candidates:
+            candidate.votes_judge = 0
+            candidate.votes_second_round = 0
+            candidate.votes_first_round = 0
+            candidate.save()
+        self.stdout.write('-- All votes reset')
