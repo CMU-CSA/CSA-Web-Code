@@ -276,12 +276,7 @@ def vote(request):
                 return error(request, 'You have voted.', redirect_url = 'a_random_page_that_probably_does_not_exist')
         except ObjectDoesNotExist:
             session = Session(sessionid = sessionid)
-        try:
-            number = AndrewIDs.objects.get(andrewId = ticket)
-            if number.first_voted:
-                return error(request, 'You have voted.', redirect_url = 'a_random_page_that_probably_does_not_exist')
-        except ObjectDoesNotExist:
-            return error(request, 'Sorry, you andrew id ' + str(ticket) + ' is not in the system')
+
         # pairs = CandidatePair.objects.all()
         # votes = []
         """
@@ -320,8 +315,6 @@ def vote(request):
 
         session.first_voted = True
         session.save()
-        number.first_voted = True
-        number.save()
     elif r == 2:
         candidates2 = Candidate.objects.filter(round = 2)
         try:
@@ -330,12 +323,6 @@ def vote(request):
                 return error(request, 'You have voted.', redirect_url = reverse('troll'))
         except ObjectDoesNotExist:
             session = Session(sessionid = sessionid)
-        try:
-            number = AndrewIDs.objects.get(andrewId = ticket)
-            if number.second_voted:
-                return error(request, 'You have voted.', redirect_url = 'a_random_page_that_probably_does_not_exist')
-        except ObjectDoesNotExist:
-            return error(request, 'Sorry, you andrew id ' + str(ticket) + ' is not in the system')
         if not 'first_choice' in request.POST or not request.POST['first_choice'] \
             or not 'second_choice' in request.POST or not request.POST['second_choice'] \
                 or not 'third_choice' in request.POST or not request.POST['third_choice']:
@@ -362,8 +349,6 @@ def vote(request):
 
         session.second_voted = True
         session.save()
-        number.second_voted = True
-        number.save()
     return render(request, 'success.html')
 
 def troll(request):
