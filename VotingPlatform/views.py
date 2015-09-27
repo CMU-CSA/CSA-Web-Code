@@ -328,12 +328,13 @@ def vote(request):
                 or not 'third_choice' in request.POST or not request.POST['third_choice']:
             return error(request, "first/second/third choice is missing in request")
         try:
+            number = request.POST['ticket']
             first = candidates2.get(name = request.POST['first_choice'])
             second = candidates2.get(name = request.POST['second_choice'])
             third = candidates2.get(name = request.POST['third_choice'])
             if first.id == second.id or second.id == third.id or first.id == third.id:
                 return error(request, "Cannot select the same candidate more than once")
-            if number.is_judge:
+            if number == 'JUDGE1' or number == 'JUDGE2' or number == 'JUDGE3' or number == 'JUDGE4':
                 first.votes_judge = first.votes_judge + 1
                 second.votes_judge = second.votes_judge + 1
                 third.votes_judge = third.votes_judge + 1
@@ -359,7 +360,7 @@ def display(request):
 
 def coefficient():
     n = len(AndrewIDs.objects.filter(first_voted = True))
-    x = float(n)*3.0*1.5 / 12.0 /2
+    x = float(300)*3.0*1.5 / 12.0 /2
     return x
 
 def displayData(request):
