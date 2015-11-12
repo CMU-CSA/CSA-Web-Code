@@ -13,7 +13,7 @@
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
 </head>
 <body>
-
+    <div >
     {% block navbar %}
 
         {% include "mainpage/navbar.html" %}
@@ -29,6 +29,19 @@
     {% endblock %}
 
     {% include "mainpage/footer.html" %}
+    </div>
+    <!-- side menu when device is mobile  -->
+    <div class="csa-side-menu">
+        <ul>
+            <li><a href="{% url 'mainpage:home' %}">Home</a></li>
+            <li><a href="{% url 'mainpage:activities' %}">Activities</a></li>
+            <li><a href="#">Resources</a></li>
+            <li><a href="{% url 'mainpage:aboutus' %}">About Us</a></li>
+            <li><a href="{% url 'mainpage:contact' %}">Contact Us</a></li>
+            <li><a href="#">Log in</a></li>
+        </ul>   
+
+    </div>    
 
     <!-- Latest compiled and minified JavaScript -->
     

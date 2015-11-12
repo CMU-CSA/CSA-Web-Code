@@ -1,5 +1,6 @@
 {% load staticfiles %}
 
+<!-- Navbar full -->
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -20,18 +21,18 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="{% url 'mainpage:home' %}">Home</a></li>
         <li><a href="{% url 'mainpage:activities' %}">Activities</a></li>
-        <li><a href="#">Resources</a></li>
         <li><a href="{% url 'mainpage:aboutus' %}">About Us</a></li>
-        <li><a href="{% url 'mainpage:contact' %}">Contact Us</a></li>
-        <li><a href="#" id ="loginBtn">Log in</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-
+<!-- Navbar full ends -->
+<!-- Navbar for phone sieze -->
+<div class ="navphone">
+</div>  
+<!-- Navbar for phone sieze ends-->
 <!-- Modal -->
-<div class="container">
-  <div class="modal fade" id="loginModal" role="dialog">
+  <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
     
       <!-- Modal content-->
@@ -41,7 +42,7 @@
           <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
         </div>
         <div class="modal-body" style="padding:40px 50px;">
-          <form role="form" id ="loginSubmit">
+          <form role="form">
             <div class="form-group">
               <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
               <input type="text" class="form-control" id="usrname" placeholder="Enter email">
@@ -65,4 +66,3 @@
       
     </div>
   </div> 
- </div> 
