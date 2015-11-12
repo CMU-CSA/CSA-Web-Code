@@ -3,14 +3,19 @@ body {
     background-color: rgb(245,244,243);
 }
 
-/* side menu */
+/* side menu  for phone*/
 .csa-side-menu{
     position: fixed;
     width: 275px;
     height: 100%;
     top: 0px;
-    left: -275px;
+    right: -275px;
     background-color: white;
+    /* transition property*/
+    -webkit-transition: right 500ms ease- 0s;
+    -moz-transition: right 500ms ease 0s;
+    -o-transition: right 500ms ease 0s;
+    transition: right 500ms ease 0s;
 }
 
 .csa-side-menu li {
@@ -18,6 +23,8 @@ body {
     text-align: center;
     list-style: none;
 }
+
+
 /* spinning logo */
 .famous-container {
     height: 350px;
@@ -289,7 +296,10 @@ a:hover {
     ul {
         text-align: right;
     }
+    .csa-side-menu .active{
+        right: 0px;
 
+    }
     .navbar-brand {
         padding-left: 10px;
         margin-left: 0 !important;
