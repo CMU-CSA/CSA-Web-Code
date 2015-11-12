@@ -27,9 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-LOGIN_URL = '/VotingPlatform/index'
-
-LOGIN_REDIRECT_URL = '/VotingPlatform/index'
 # Application definition
 
 INSTALLED_APPS = (
@@ -39,8 +36,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'mainpage',
-    'VotingPlatform'
+    'mainpage'
 )
 
 MIDDLEWARE_CLASSES = (
