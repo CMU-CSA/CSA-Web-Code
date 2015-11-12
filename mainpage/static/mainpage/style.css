@@ -52,6 +52,7 @@ body {
 .navbar-default {
     margin-bottom: 0 !important;
     border-color: white !important;
+    border-width: 0px;
 }
 
 .navbar-default .navbar-collapse{

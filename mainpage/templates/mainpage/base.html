@@ -24,24 +24,14 @@
     <script src="https://assets-te.famo.us/embed/embed.js"></script>
     <div class="famous-container" data-famous-container-identifier="f4fd7fd9-cd90-4381-97c9-032b3ed9c482"></div>
 
-    {% block content %}
+    <div class = "csa-content">
+        {% block content %}
 
-    {% endblock %}
+        {% endblock %}
 
-    {% include "mainpage/footer.html" %}
+        {% include "mainpage/footer.html" %}
+        </div>
     </div>
-    <!-- side menu when device is mobile  -->
-    <div class="csa-side-menu">
-        <ul>
-            <li><a href="{% url 'mainpage:home' %}">Home</a></li>
-            <li><a href="{% url 'mainpage:activities' %}">Activities</a></li>
-            <li><a href="#">Resources</a></li>
-            <li><a href="{% url 'mainpage:aboutus' %}">About Us</a></li>
-            <li><a href="{% url 'mainpage:contact' %}">Contact Us</a></li>
-            <li><a href="#">Log in</a></li>
-        </ul>   
-
-    </div>    
 
     <!-- Latest compiled and minified JavaScript -->
     
