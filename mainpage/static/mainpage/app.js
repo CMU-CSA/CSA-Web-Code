@@ -15,9 +15,9 @@ $(document).ready(function(){
  		$('.csa-side-menu').toggleClass('active');
  	});
 
- 	$('.body').click(function(event){
+ 	$('body').click(function(e){
  		if ($('.csa-side-menu').hasClass('active')){
- 			 var x = event.pageX;
+ 			 var x = e.pageX;
  			 var width = document.documentElement.clientWidth;
  			 if (x < width - 275){
  			 	$('.csa-side-menu').toggleClass('active');
