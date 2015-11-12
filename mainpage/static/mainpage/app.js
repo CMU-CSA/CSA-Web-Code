@@ -11,11 +11,11 @@ $(document).ready(function(){
  	});
 
 
- 	$('#side-menu-collapse').click(function(){
+ 	$('#csa-side-menu-button').click(function(){
  		$('.csa-side-menu').toggleClass('active');
  	});
 
- 	$('.body.click').click(function(event){
+ 	$('.body').click(function(event){
  		if ($('.csa-side-menu').hasClass('active')){
  			 var x = event.pageX;
  			 var width = document.documentElement.clientWidth;

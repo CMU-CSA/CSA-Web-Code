@@ -24,6 +24,10 @@ body {
     list-style: none;
 }
 
+.csa-side-menu.active{
+    right: 0px;
+
+}
 
 /* spinning logo */
 .famous-container {
@@ -297,10 +301,7 @@ a:hover {
     ul {
         text-align: right;
     }
-    .csa-side-menu .active{
-        right: 0px;
 
-    }
     .navbar-brand {
         padding-left: 10px;
         margin-left: 0 !important;
