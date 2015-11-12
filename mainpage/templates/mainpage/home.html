@@ -1,46 +1,14 @@
 {% extends "mainpage/base.html" %}
 {% load staticfiles %}
 
-{% block navbar %}
-
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="{% url 'mainpage:home' %}">
-            <img class="img-circle" src="{% static 'mainpage/CSA.png' %}">
-          </a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="navbar-collapse-1">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="{% url 'mainpage:home' %}">Home</a></li>
-            <li><a href="{% url 'mainpage:activities' %}">Activities</a></li>
-            <li><a href="#">Resources</a></li>
-            <li><a href="{% url 'mainpage:aboutus' %}">About Us</a></li>
-            <li><a href="{% url 'mainpage:contact' %}">Contact Us</a></li>
-            <li><a href="#">Log in</a></li>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
-
-{% endblock %}
-
 {% block content %}
 
+
     <div></div>
     <div></div>
     <div></div>
 
-
+    
     <script>
         $( document ).ready(function() {
             $("ul li:nth-child(1) > a").addClass('active');
