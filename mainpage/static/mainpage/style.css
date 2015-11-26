@@ -73,24 +73,11 @@ body {
 }
 
 li {
-    padding-left: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 
-/* home-nav */
-.home-nav .navbar-brand{
-    margin-left: 0px !important;
-}
-
-.home-nav .navbar-collapse{
-    text-align:center;
-    margin-bottom: -5px;
-}
-.home-nav ul{
-    display:inline-block;
-    margin:0;
-    float:none;
-}
 
 /* footer */
 .footer {
