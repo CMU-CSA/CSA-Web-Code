@@ -105,13 +105,27 @@ li {
 }
 
 /* Home */
+#home-main-pic{
+  background: url("home/home_big_1.JPG");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 600px;
+  background-position: center center;
+}
 
+#home-main-pic img{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) 
+}
 #corridor{
   background: url("home/home_big_2.png");
   background-size: cover;
   background-repeat: no-repeat;
-  background-origin: border-box;   
-  border-top: 50px;
+  background-position: center center;
 }
 .title {
     text-align: center;
