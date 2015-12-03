@@ -3,7 +3,7 @@
 
 {% block content %}
 
-
+  <div class="home">
     <div id="home-main-pic">
         <img  style ="text-align:center; width:534px; margin-left: auto;margin-right: auto; display:block;" src="{%static 'mainpage/home/Group.png' %}">
     </div>
@@ -18,33 +18,35 @@
     </div>
 
     <div class="container-fluid white">
-        <h3 class="title">WHAT WE DO</h3>
+        <h3 style = "margin-bottom:70px; margin-top:30px" class="title">WHAT WE DO</h3>
         <div class="row">
             <div class="col-md-4">
                 <div class="icon">
-                    <img src="{% static 'mainpage/home/icon2.png' %}">
+                    <img style ="width: 66px; height: 73px; " src="{% static 'mainpage/home/icon2.png' %}">
                 </div>
                 <h4>Connect Students</h4>
-
+                <p>Mentor and mentee networks enable students learning from each other and build meaningful relationships </p>
             </div>
             <div class="col-md-4">
                  <div class="icon">
-                     <img src="{% static 'mainpage/home/icon1.png' %}">
+                     <img style ="width: 61px; height: 60px; " src="{% static 'mainpage/home/icon1.png' %}">
                  </div>
                 <h4>Share Resources</h4>
+                <p>Mentor and mentee networks enable students learning from each other and build meaningful relationships </p>
             </div>
             <div class="col-md-4">
                 <div class="icon">
-                    <img src="{% static 'mainpage/home/icon3.png' %}">
+                    <img style ="width: 70px; height: 57px; " src="{% static 'mainpage/home/icon3.png' %}">
                 </div>
                 <h4>Provide the Latest Feed</h4>
+                <p>Mentor and mentee networks enable students learning from each other and build meaningful relationships </p>
             </div>
 
         </div>
     </div>
     <div></div>
 
-
+  </div>  
     <script>
         $( document ).ready(function() {
             $("ul li:nth-child(1) > a").addClass('active');

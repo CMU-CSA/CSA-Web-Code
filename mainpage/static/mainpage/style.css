@@ -105,12 +105,42 @@ li {
 }
 
 /* Home */
+
+
+.home .icon img{
+  margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.home .row .col-md-4{
+    height: 300px;
+}
+.home .row h4{
+    text-align: center;
+    position: absolute;
+    bottom: 150px;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) 
+}
+.home .row p{
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) 
+}
 #home-main-pic{
   background: url("home/home_big_1.JPG");
   background-size: cover;
   background-repeat: no-repeat;
   height: 600px;
   background-position: center center;
+
 }
 
 #home-main-pic img{
