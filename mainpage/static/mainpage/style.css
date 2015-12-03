@@ -105,6 +105,14 @@ li {
 }
 
 /* Home */
+
+#corridor{
+  background: url("home/home_big_2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-origin: border-box;   
+  border-top: 50px;
+}
 .title {
     text-align: center;
 }
@@ -158,6 +166,7 @@ textarea  {
 .active{
     border-bottom: 2px solid rgb(207,66,77) !important;
 }
+
 
 
 /* about us */
