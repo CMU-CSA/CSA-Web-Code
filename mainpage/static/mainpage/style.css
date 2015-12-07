@@ -3,6 +3,11 @@ body {
     background-color: rgb(245,244,243);
 }
 
+/* content to move based on toggle of side menu*/
+.csa-content.inactive{
+    position: absolute;
+    right: 275px;
+}
 /* side menu  for phone*/
 .csa-side-menu{
     position: fixed;

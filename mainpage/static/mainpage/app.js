@@ -13,6 +13,7 @@ $(document).ready(function(){
 
  	$('#csa-side-menu-button').click(function(){
  		$('.csa-side-menu').toggleClass('active');
+ 		$('.csa-content').toggleClass('inactive');
  	});
 
  	$('body').click(function(e){
@@ -21,6 +22,7 @@ $(document).ready(function(){
  			 var width = document.documentElement.clientWidth;
  			 if (x < width - 275){
  			 	$('.csa-side-menu').toggleClass('active');
+ 			 	$('.csa-content').toggleClass('inactive');
  			 }
  		}
 

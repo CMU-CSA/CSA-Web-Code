@@ -32,7 +32,14 @@
     {% include "mainpage/footer.html" %}
 
     </div>
-
+    
+    <div class ="csa-side-menu" id="side-menu-collapse">
+      <ul>
+        <li><a href="{% url 'mainpage:home' %}">Home</a></li>
+        <li><a href="{% url 'mainpage:activities' %}">Activities</a></li>
+        <li><a href="{% url 'mainpage:aboutus' %}">About Us</a></li>
+      </ul>
+    </div>  
     <!-- Latest compiled and minified JavaScript -->
     
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
