@@ -3,10 +3,21 @@ body {
     background-color: rgb(245,244,243);
 }
 
+
+.csa-content{
+    /* transition property*/
+    -webkit-transition: all 500ms ease 0s;
+    -moz-transition: all 500ms ease 0s;
+    -o-transition: all 500ms ease 0s;
+    transition: all 500ms ease 0s;
+
+}
 /* content to move based on toggle of side menu*/
 .csa-content.inactive{
     position: absolute;
     right: 275px;
+    left: -275px;
+
 }
 /* side menu  for phone*/
 .csa-side-menu{
@@ -322,11 +333,6 @@ a:hover {
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
-    body {
-        /*debug use only*/
-        background-color: lightblue;
-    }
-
     .activity .words {
         padding-top: 10px;
         padding-left: 20px;
@@ -351,13 +357,19 @@ a:hover {
 
 /* Extra Small Devices, Phones */ 
 @media only screen and (max-width : 480px) {
-    body {
-        background-color: lightcoral;
+    .navbar.navbar-default{
+        position: fixed;
+        width: 100%;
+        z-index: 10;
     }
-
+    .navbar.navbar-default.inactive{
+        left: -275px; 
+        right: 275px; 
+    }
     ul {
         text-align: right;
     }
+
 
     .navbar-brand {
         padding-left: 10px;
