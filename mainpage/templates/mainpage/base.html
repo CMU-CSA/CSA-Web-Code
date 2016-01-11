@@ -13,33 +13,35 @@
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
 </head>
 <body>
-    <div class="csa-content">
-    {% block navbar %}
+    <div class="base-container">
+        <div class="csa-content">
+        {% block navbar %}
 
-        {% include "mainpage/navbar.html" %}
+            {% include "mainpage/navbar.html" %}
 
-    {% endblock %}
+        {% endblock %}
 
-    <!-- a spining logo for fun -->
-    <!-- <script src="https://assets-te.famo.us/embed/embed.js"></script> >
-    <div class="famous-container" data-famous-container-identifier="f4fd7fd9-cd90-4381-97c9-032b3ed9c482"></div>
-    -->
+        <!-- a spining logo for fun -->
+        <!-- <script src="https://assets-te.famo.us/embed/embed.js"></script> >
+        <div class="famous-container" data-famous-container-identifier="f4fd7fd9-cd90-4381-97c9-032b3ed9c482"></div>
+        -->
 
-    {% block content %}
+        {% block content %}
 
-    {% endblock %}
+        {% endblock %}
 
-    {% include "mainpage/footer.html" %}
+        {% include "mainpage/footer.html" %}
 
-    </div>
-    
-    <div class ="csa-side-menu" id="side-menu-collapse">
-      <ul>
-        <li><a href="{% url 'mainpage:home' %}">Home</a></li>
-        <li><a href="{% url 'mainpage:activities' %}">Activities</a></li>
-        <li><a href="{% url 'mainpage:aboutus' %}">About Us</a></li>
-      </ul>
-    </div>  
+        </div>
+        
+        <div class ="csa-side-menu" id="side-menu-collapse">
+          <ul>
+            <li><a href="{% url 'mainpage:home' %}">Home</a></li>
+            <li><a href="{% url 'mainpage:activities' %}">Activities</a></li>
+            <li><a href="{% url 'mainpage:aboutus' %}">About Us</a></li>
+          </ul>
+        </div>  
+    </div>    
     <!-- Latest compiled and minified JavaScript -->
     
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>

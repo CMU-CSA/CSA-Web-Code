@@ -3,6 +3,20 @@ body {
     background-color: rgb(245,244,243);
 }
 
+.base-container{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    -webkit-transition: left 0.4s ease-in-out;
+    -moz-transition: left 0.4s ease-in-out;
+    -ms-transition: left 0.4s ease-in-out;
+    -o-transition: left 0.4s ease-in-out;
+    transition: left 0.4s ease-in-out;
+}
+.base-container.active{
+    left: -275px;
+}
 
 .csa-content{
     /* transition property*/
@@ -21,17 +35,13 @@ body {
 }
 /* side menu  for phone*/
 .csa-side-menu{
-    position: fixed;
+    position: absolute;
     width: 275px;
     height: 100%;
     top: 0px;
     right: -275px;
     background-color: white;
-    /* transition property*/
-    -webkit-transition: right 500ms ease 0s;
-    -moz-transition: right 500ms ease 0s;
-    -o-transition: right 500ms ease 0s;
-    transition: right 500ms ease 0s;
+
 }
 
 .csa-side-menu li {
@@ -162,7 +172,7 @@ li {
 #home-main-pic img{
     margin: 0;
     position: absolute;
-    top: 50%;
+    top: 350px;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%) 
