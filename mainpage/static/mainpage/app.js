@@ -20,8 +20,7 @@ $(document).ready(function(){
  			 var x = e.pageX;
  			 var width = document.documentElement.clientWidth;
  			 if (x < width - 275){
- 			 	$('.csa-side-menu').toggleClass('active');
- 			 	$('.csa-content').toggleClass('inactive');
+ 			 	$('.base-container').toggleClass('active');
  			 }
  		}
 

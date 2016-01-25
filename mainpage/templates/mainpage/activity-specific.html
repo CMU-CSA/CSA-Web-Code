@@ -1,0 +1,42 @@
+{% extends "mainpage/base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+    <div class="activity-specific container-fluid">
+        <div class="title" style="width:100%; height: 300px;padding: 50px 20px 50px 20px;text-align: left;">
+            <h1 style="text-align:left"> Ski Trip 2016</h1>
+            <p>
+                Stay tuned to the most appreciated CSA activity – CSA Ski Trip!
+                Join your friends and spend the long weekend in the first week of spring semester 2016.
+                No ski experience required. You can always learn as you go and sign up optional practices.
+                CSA have reserved the largest cabin in the Seven Springs Mountain Resort to provide
+                the best experience you can ever imagine. Enjoy the skiing in the morning and gathering
+                in the evening to celebrate the new semester!
+            </p>
+
+
+        </div>
+        <div class="infomation">
+            <p>Time: Jan 16 - Jan 18, 2015</p>
+                
+            <p>Location: Seven Springs, PA</p>
+
+            <p>Purchase Ticket: Sold out</p>
+        </div> 
+        <div class="photos row">
+            <div class="col-md-3 col-sm-4 col-xs-12">
+                <div class="member">
+                   
+                </div>
+            </div>
+        </div>       
+    </div>
+
+    <script>
+        $( document ).ready(function() {
+            $("ul li:nth-child(2) > a").addClass('active');
+        });
+    </script>
+
+{% endblock %}

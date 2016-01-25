@@ -1,5 +1,6 @@
-body {
+body,html {
     /*debug use only*/
+    overflow-x: hidden; 
     background-color: rgb(245,244,243);
 }
 
@@ -15,7 +16,7 @@ body {
     transition: left 0.4s ease-in-out;
 }
 .base-container.active{
-    left: -275px;
+    left: -240px;
 }
 
 .csa-content{
@@ -29,25 +30,40 @@ body {
 /* content to move based on toggle of side menu*/
 .csa-content.inactive{
     position: absolute;
-    right: 275px;
-    left: -275px;
+    right: 240px;
+    left: -240px;
 
 }
 /* side menu  for phone*/
 .csa-side-menu{
     position: absolute;
-    width: 275px;
+    width: 240px;
     height: 100%;
     top: 0px;
-    right: -275px;
-    background-color: white;
+    right: -240px;
+    background-color: steelblue;
+    padding-top: 50px;
+    opacity: 0.9;
 
 }
 
+.csa-side-menu ul{
+    padding: 0px;
+}
 .csa-side-menu li {
-    height: 30px;
+    padding: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: white;
     text-align: center;
     list-style: none;
+    vertical-align: middle;
+}
+.csa-side-menu li a{
+    color: #F5F7F9;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 100;
 }
 
 .csa-side-menu.active{

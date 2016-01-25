@@ -14,6 +14,9 @@ def aboutus(request):
 def activities(request):
     return render(request, 'mainpage/activities.html')
 
+def specific(request):
+    return render(request, 'mainpage/activity-specific.html')    
+
 def login(request):
     if request.method == 'POST':
         ##do some validation stuff
