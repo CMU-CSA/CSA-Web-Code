@@ -347,6 +347,10 @@ textarea  {
     padding-bottom: 5px;
 }
 
+.member .activity_image {
+    margin-bottom: 0;
+}
+
 a:link {
     text-decoration: none;
 }

@@ -3,9 +3,11 @@
 $(document).ready(function(){
 
     resizeActivityImage();
+    resizeActivityImage2();
 
     $(window).resize(function(){
         resizeActivityImage();
+        resizeActivityImage2();
     });
 
 });
@@ -28,5 +30,12 @@ function resizeActivityImage() {
             $(this).find(".words").height(newHeight-22);
             $(this).height(newHeight);
         }
+    });
+}
+
+function resizeActivityImage2() {
+    $(".activity_image").each(function(){
+        var width = $(".activity_image").width();
+        $(this).height(width);
     });
 }
