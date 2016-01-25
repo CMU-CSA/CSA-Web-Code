@@ -52,8 +52,8 @@ body,html {
 }
 .csa-side-menu li {
     padding: 10px;
-    border-style: solid;
-    border-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
     border-color: white;
     text-align: center;
     list-style: none;
@@ -353,6 +353,35 @@ a:link {
 
 a:hover {
     text-decoration: none;
+}
+
+
+/* activity specific */
+.activity-specific .title{
+    width:100%; 
+    height: 300px;
+    padding: 50px 40px 50px 40px;
+    text-align: left;
+    color: white;
+}
+
+.activity-specific .title h1{
+    padding: 10px;
+}
+
+.activity-specific .title p{
+    padding: 10px;
+}
+
+.activity-specific .infomation{
+    padding: 30px 50px 30px 50px;
+}
+
+.activity-specific .title{
+    background-image: url('activities/skitrip/IMG_0775.JPG');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 70%;
 }
 
 
