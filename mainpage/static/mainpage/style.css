@@ -189,7 +189,7 @@ li {
     transform: translate(-50%, -50%) 
 }
 #home-main-pic{
-  background: url("home/home_big_1.JPG");
+  background: url("home/home_big_1.png");
   background-size: cover;
   background-repeat: no-repeat;
   height: 600px;
