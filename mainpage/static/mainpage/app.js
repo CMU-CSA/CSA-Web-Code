@@ -14,15 +14,17 @@ $(document).ready(function(){
  	$('#csa-side-menu-button').click(function(){
  		$('.base-container').toggleClass('active');
  		$('.csa-side-menu').toggleClass('active');
+ 		$('.navbar-header').toggleClass('active');
  	});
 
  	$('body').click(function(e){
  		if ($('.base-container').hasClass('active')){
  			 var x = e.pageX;
  			 var width = document.documentElement.clientWidth;
- 			 if (x < width - 275){
+ 			 if (x < width - 240){
  			 	$('.base-container').toggleClass('active');
  			 	$('.csa-side-menu').toggleClass('active');
+ 			 	$('.navbar-header').toggleClass('active');
  			 }
  		}
 

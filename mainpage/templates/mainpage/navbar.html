@@ -4,19 +4,21 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" 
-              class="navbar-toggle collapsed"
-              aria-expanded="false"
-              id = "csa-side-menu-button">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="{% url 'mainpage:home' %}">
-        <img class="img-circle" src="{% static 'mainpage/CSA.png' %}">
-      </a>
+    <div class="wrapper-navbar-header">
+      <div class="navbar-header">
+        <button type="button" 
+                class="navbar-toggle collapsed"
+                aria-expanded="false"
+                id = "csa-side-menu-button">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="{% url 'mainpage:home' %}">
+          <img class="img-circle" src="{% static 'mainpage/CSA.png' %}">
+        </a>
+      </div>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -30,9 +32,7 @@
   </div><!-- /.container-fluid -->
 </nav>
 <!-- Navbar full ends -->
-<!-- side-menu for phone size -->
 
-<!-- Navbar for phone sieze ends-->
 <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
