@@ -9,11 +9,11 @@ body,html {
     height: 100%;
     width: 100%;
     left: 0;
-    -webkit-transition: left 0.4s ease-in-out;
-    -moz-transition: left 0.4s ease-in-out;
-    -ms-transition: left 0.4s ease-in-out;
-    -o-transition: left 0.4s ease-in-out;
-    transition: left 0.4s ease-in-out;
+    -webkit-transition: left 0.4s linear;
+    -moz-transition: left 0.4s linear;
+    -ms-transition: left 0.4s linear;
+    -o-transition: left 0.4s linear;
+    transition: left 0.4s linear;
 }
 .base-container.active{
     left: -240px;
@@ -44,11 +44,11 @@ body,html {
 
 .navbar-header{
     position: relative;
-    -webkit-transition: left 0.4s ease-in-out;
-    -moz-transition: left 0.4s ease-in-out;
-    -ms-transition: left 0.4s ease-in-out;
-    -o-transition: left 0.4s ease-in-out;
-    transition: left 0.4s ease-in-out;
+    -webkit-transition: left 0.4s linear;
+    -moz-transition: left 0.4s linear;
+    -ms-transition: left 0.4s linear;
+    -o-transition: left 0.4s linear;
+    transition: left 0.4s linear;
     left: 0px;
 }
 
@@ -71,11 +71,12 @@ body,html {
     background-color: steelblue;
     padding-top: 50px;
     opacity: 0.9;
-    -webkit-transition: left 0.4s ease-in-out;
-    -moz-transition: left 0.4s ease-in-out;
-    -ms-transition: left 0.4s ease-in-out;
-    -o-transition: left 0.4s ease-in-out;
-    transition: left 0.4s ease-in-out;
+    -webkit-transition: left 0.4s linear;
+    -moz-transition: left 0.4s linear;
+    -ms-transition: left 0.4s linear;
+    -o-transition: left 0.4s linear;
+    transition: left 0.4s linear;
+    z-index: 12;
 
 }
 
