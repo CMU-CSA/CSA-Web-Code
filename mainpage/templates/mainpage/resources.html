@@ -1,0 +1,23 @@
+{% extends "mainpage/base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+    <div class="activities container-fluid">
+        <div class="activity row">
+            <div class="col-md-3 col-sm-3 col-xs-12 pic" style="padding: 0;">
+                <img style=" margin:-3em 0;" src="{% static 'mainpage/CSA.png' %}">
+            </div>
+            <div class="col-md-9 col-sm-9 col-xs-12 words">
+                <p class="title" style="text-align: left"><strong>Freshman Preparation Guide</strong></p>
+                
+                <p class="link"><a href="{% static 'mainpage/resources/大一新生手册 12.pdf' %}">Download</a></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        $( document ).ready(function() {
+            $("ul li:nth-child(4) > a").addClass('active');
+        });
+    </script>
+{% endblock %}

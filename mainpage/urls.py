@@ -8,6 +8,7 @@ urlpatterns = [
     url(r'^aboutus/', views.aboutus, name='aboutus'),
     url(r'^activities', views.activities, name='activities'),
     url(r'^login', views.login, name="login"),
-    url(r'^activity/specific', views.specific, name='specific')
+    url(r'^activity/specific', views.specific, name='specific'),
+    url(r'^resources', views.resources, name='resources')
 ]
 
